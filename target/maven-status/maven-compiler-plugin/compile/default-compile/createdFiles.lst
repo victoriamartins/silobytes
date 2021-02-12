@@ -2,8 +2,11 @@ com\mycompany\modelo\Usuario.class
 com\mycompany\util\Info.class
 com\mycompany\NovoUsuarioController.class
 com\mycompany\PrimaryController.class
+com\mycompany\NovoProdutorController.class
 com\mycompany\SecondaryController.class
 com\mycompany\util\Arquivo.class
+com\mycompany\util\ArquivoProdutor.class
 com\mycompany\App.class
 module-info.class
 com\mycompany\MenuController.class
+com\mycompany\modelo\Produtor.class

@@ -1,5 +1,6 @@
 package com.mycompany.util;
 
+import com.mycompany.modelo.Produtor;
 import com.mycompany.modelo.Usuario;
 import java.util.ArrayList;
 import org.junit.jupiter.api.AfterEach;
@@ -35,8 +36,13 @@ public class ArquivoTest {
         Usuario u = new Usuario("Bob", "Bob esponja", "123");
         Arquivo.inserir(u);
     }
-*/  
-
+ 
+    @org.junit.jupiter.api.Test
+    public void testInserirProdutor(){
+        Produtor p = new Produtor("João", "4567891564", "19670124");
+        ArquivoProdutor.inserir(p);
+    }
+    
     @org.junit.jupiter.api.Test
     public void testListar(){
         ArrayList<Usuario> lista = Arquivo.listar();
@@ -44,5 +50,17 @@ public class ArquivoTest {
             System.out.println(u.getNome());
         }
     }
-  
+    */
+    @org.junit.jupiter.api.Test
+    public void testListarProdutor(){
+        ArrayList<Produtor> lista = ArquivoProdutor.listar();
+        for(Produtor p:lista){
+            System.out.println("*********");
+            System.out.println(p.getNome());
+        }
+    }
+    
+
+
+
 }
