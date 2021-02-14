@@ -1,6 +1,7 @@
 package com.mycompany.util;
 
 import com.mycompany.modelo.Produtor;
+import com.mycompany.modelo.Silo;
 import com.mycompany.modelo.Usuario;
 import java.time.LocalDate;
 import java.time.Month;
@@ -54,8 +55,19 @@ public class ArquivoTest {
     }
     
     @org.junit.jupiter.api.Test
+    public void testListarProdutor(){
+        ArrayList<Produtor> lista = ArquivoProdutor.listar();
+        for(Produtor p:lista){
+            System.out.println("*********");
+            System.out.println(p.getNome());
+            System.out.println(p.getCpf());
+            System.out.println(p.getNascimento());
+        }
+    }
+    
+    @org.junit.jupiter.api.Test
     public void testInserirProdutor(){
-        Produtor p = new Produtor("João", "4567891564", LocalDate.of(1950, 3, 2));
+        Produtor p = new Produtor("João", "4567891564", LocalDate.of(1950, 3, 2), "14998062934");
         ArquivoProdutor.inserir(p);
     }
     
@@ -67,16 +79,21 @@ public class ArquivoTest {
             System.out.println(p.getNome());
         }
     }
-    */
-
     @org.junit.jupiter.api.Test
-    public void testListarProdutor(){
-        ArrayList<Produtor> lista = ArquivoProdutor.listar();
-        for(Produtor p:lista){
-            System.out.println("*********");
-            System.out.println(p.getNome());
-            System.out.println(p.getCpf());
-            System.out.println(p.getNascimento());
+    public void testInserirSilo() {
+        Silo s = new Silo("Rodovia Teste, 404. Fartura - SP", 50.2, false);
+        ArquivoSilo.inserir(s);
+    }
+   
+    @org.junit.jupiter.api.Test
+    public void testListarSilos(){
+        ArrayList<Silo> lista = ArquivoSilo.listar();
+        for(Silo s:lista){
+            System.out.println(s.getEndereco());
+            System.out.println(s.getAlugado());
+            System.out.println(s.getCapacidade());
         }
     }
+     */
+
 }

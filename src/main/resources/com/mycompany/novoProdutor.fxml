@@ -42,7 +42,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.NovoProdutorController">
+<VBox prefHeight="260.0" prefWidth="306.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.NovoProdutorController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -53,17 +53,19 @@
         </Menu>
       </menus>
     </MenuBar>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="206.0" prefWidth="370.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="206.0" prefWidth="370.0" VBox.vgrow="NEVER">
       <children>
-            <Button fx:id="btnCadastrar" layoutX="204.0" layoutY="147.0" mnemonicParsing="false" onAction="#cadastrarProdutor" text="Cadastrar" />
+            <Button fx:id="btnCadastrar" layoutX="204.0" layoutY="188.0" mnemonicParsing="false" onAction="#cadastrarProdutor" text="Cadastrar" />
             <Label layoutX="32.0" layoutY="23.0" text="Nome" />
-            <Label layoutX="32.0" layoutY="105.0" text="Nacimento" />
+            <Label layoutX="32.0" layoutY="107.0" text="Nacimento" />
             <Label layoutX="32.0" layoutY="65.0" text="CPF" />
             <TextField fx:id="campoCPF" layoutX="121.0" layoutY="61.0" />
-            <Button fx:id="btnLimpar" layoutX="125.0" layoutY="147.0" mnemonicParsing="false" onAction="#limparCampos" text="Limpar" />
-            <Label fx:id="lblMsg" layoutX="32.0" layoutY="188.0" prefHeight="17.0" prefWidth="239.0" />
-            <DatePicker fx:id="campoNascimento" layoutX="121.0" layoutY="101.0" prefHeight="25.0" prefWidth="149.0" />
+            <Button fx:id="btnLimpar" layoutX="125.0" layoutY="188.0" mnemonicParsing="false" onAction="#limparCampos" text="Limpar" />
+            <Label fx:id="lblMsg" layoutX="32.0" layoutY="232.0" prefHeight="17.0" prefWidth="239.0" />
+            <DatePicker fx:id="campoNascimento" layoutX="121.0" layoutY="103.0" prefHeight="25.0" prefWidth="149.0" />
             <TextField fx:id="campoNome" layoutX="121.0" layoutY="19.0" />
+            <Label layoutX="32.0" layoutY="148.0" text="Telefone:" />
+            <TextField fx:id="campoTel" layoutX="121.0" layoutY="144.0" />
       </children>
     </AnchorPane>
   </children>

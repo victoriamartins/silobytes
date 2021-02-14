@@ -64,6 +64,11 @@
                 <MenuItem mnemonicParsing="false" onAction="#cadastrarProdutor" text="Novo" />
               </items>
             </Menu>
+            <Menu mnemonicParsing="false" text="Silo">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#cadastrarSilo" text="Novo" />
+              </items>
+            </Menu>
         <Menu mnemonicParsing="false" text="Ajuda">
           <items>
             <MenuItem mnemonicParsing="false" text="Sobre" />

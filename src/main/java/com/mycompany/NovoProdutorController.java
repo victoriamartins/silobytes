@@ -27,13 +27,17 @@ public class NovoProdutorController {
     
     @FXML
     private Label lblMsg;
+    
+    @FXML
+    private TextField campoTel;
 
     @FXML
     private void cadastrarProdutor(){
         String nome = campoNome.getText();
         String cpf = campoCPF.getText();
         LocalDate nascimento = campoNascimento.getValue();
-        Produtor p = new Produtor(nome, cpf, nascimento);
+        String telefone = campoTel.getText();
+        Produtor p = new Produtor(nome, cpf, nascimento, telefone);
         try {
             ArquivoProdutor.inserir(p);
             this.limparCampos();

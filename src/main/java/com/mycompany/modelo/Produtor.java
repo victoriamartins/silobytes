@@ -4,17 +4,20 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 public class Produtor implements Serializable{
-    String nome, cpf;
+    String nome, cpf, telefone;
     LocalDate nascimento;
     public Produtor () {
         this.nome = "";
         this.cpf = "";
+        this.telefone = "";
         this.nascimento = null;
     }
-    public Produtor (String nome, String cpf, LocalDate nascimento){
+    public Produtor (String nome, String cpf, LocalDate nascimento, 
+            String telefone){
         this.nome = nome;
         this.nascimento = nascimento;
         this.cpf = cpf;
+        this.telefone = telefone;
     }
 
     public String getNome() {
@@ -26,6 +29,9 @@ public class Produtor implements Serializable{
     public LocalDate getNascimento() {
         return nascimento;
     }
+    public String getTelefone() {
+        return this.telefone;
+    }
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -34,5 +40,8 @@ public class Produtor implements Serializable{
     }
     public void setNascimento(LocalDate nascimento) {
         this.nascimento = nascimento;
+    }
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 }

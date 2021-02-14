@@ -18,4 +18,9 @@ public class MenuController {
     private void cadastrarProdutor () throws IOException{
         App.setRoot("novoProdutor");
     }
+    
+    @FXML 
+    private void cadastrarSilo() throws IOException{
+        App.setRoot("novoSilo");
+    }
 }
