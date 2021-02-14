@@ -2,8 +2,10 @@ package com.mycompany;
 
 import com.mycompany.modelo.Produtor;
 import com.mycompany.util.ArquivoProdutor;
+import java.time.LocalDate;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
@@ -18,7 +20,7 @@ public class NovoProdutorController {
     private TextField campoCPF;
 
     @FXML
-    private TextField campoNascimento;
+    private DatePicker campoNascimento;
 
     @FXML
     private Button btnLimpar;
@@ -30,7 +32,7 @@ public class NovoProdutorController {
     private void cadastrarProdutor(){
         String nome = campoNome.getText();
         String cpf = campoCPF.getText();
-        String nascimento = campoNascimento.getText();
+        LocalDate nascimento = campoNascimento.getValue();
         Produtor p = new Produtor(nome, cpf, nascimento);
         try {
             ArquivoProdutor.inserir(p);
@@ -44,7 +46,7 @@ public class NovoProdutorController {
     @FXML 
     private void limparCampos(){
         campoCPF.setText("");
-        campoNascimento.setText("");
+        campoNascimento.getEditor().clear();
         campoNome.setText("");
     }
 }

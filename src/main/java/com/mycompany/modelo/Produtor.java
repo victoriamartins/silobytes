@@ -1,15 +1,17 @@
 package com.mycompany.modelo;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 public class Produtor implements Serializable{
-    String nome, cpf, nascimento;
+    String nome, cpf;
+    LocalDate nascimento;
     public Produtor () {
         this.nome = "";
         this.cpf = "";
-        this.nascimento = "";
+        this.nascimento = null;
     }
-    public Produtor (String nome, String cpf, String nascimento){
+    public Produtor (String nome, String cpf, LocalDate nascimento){
         this.nome = nome;
         this.nascimento = nascimento;
         this.cpf = cpf;
@@ -21,7 +23,7 @@ public class Produtor implements Serializable{
     public String getCpf() {
         return cpf;
     }
-    public String getNascimento() {
+    public LocalDate getNascimento() {
         return nascimento;
     }
     public void setNome(String nome) {
@@ -30,7 +32,7 @@ public class Produtor implements Serializable{
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
-    public void setNascimento(String nascimento) {
+    public void setNascimento(LocalDate nascimento) {
         this.nascimento = nascimento;
     }
 }

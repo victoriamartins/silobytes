@@ -2,6 +2,8 @@ package com.mycompany.util;
 
 import com.mycompany.modelo.Produtor;
 import com.mycompany.modelo.Usuario;
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.ArrayList;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
@@ -50,7 +52,13 @@ public class ArquivoTest {
             System.out.println(u.getNome());
         }
     }
-    */
+    
+    @org.junit.jupiter.api.Test
+    public void testInserirProdutor(){
+        Produtor p = new Produtor("João", "4567891564", LocalDate.of(1950, 3, 2));
+        ArquivoProdutor.inserir(p);
+    }
+    
     @org.junit.jupiter.api.Test
     public void testListarProdutor(){
         ArrayList<Produtor> lista = ArquivoProdutor.listar();
@@ -59,8 +67,16 @@ public class ArquivoTest {
             System.out.println(p.getNome());
         }
     }
-    
+    */
 
-
-
+    @org.junit.jupiter.api.Test
+    public void testListarProdutor(){
+        ArrayList<Produtor> lista = ArquivoProdutor.listar();
+        for(Produtor p:lista){
+            System.out.println("*********");
+            System.out.println(p.getNome());
+            System.out.println(p.getCpf());
+            System.out.println(p.getNascimento());
+        }
+    }
 }
