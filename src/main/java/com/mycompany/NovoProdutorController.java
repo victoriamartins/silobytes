@@ -53,4 +53,8 @@ public class NovoProdutorController {
         campoNascimento.getEditor().clear();
         campoNome.setText("");
     }
+    @FXML
+    private void sair(){
+        System.exit(0);
+    }
 }

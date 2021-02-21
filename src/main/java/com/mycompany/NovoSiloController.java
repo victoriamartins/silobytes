@@ -52,4 +52,8 @@ public class NovoSiloController {
         campoEstado.setText("");
         campoCapacidade.setValue(0);
     }
+    @FXML
+    private void sair(){
+        System.exit(0);
+    }
 }

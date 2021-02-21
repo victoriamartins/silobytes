@@ -12,4 +12,5 @@ com\mycompany\App.class
 module-info.class
 com\mycompany\MenuController.class
 com\mycompany\util\ArquivoSilo.class
+com\mycompany\ConsultaProdutorController.class
 com\mycompany\modelo\Produtor.class

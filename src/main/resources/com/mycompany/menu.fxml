@@ -62,6 +62,7 @@
             <Menu mnemonicParsing="false" text="Produtor">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#cadastrarProdutor" text="Novo" />
+                  <MenuItem mnemonicParsing="false" onAction="#consultarProdutor" text="Consultar" />
               </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Silo">
