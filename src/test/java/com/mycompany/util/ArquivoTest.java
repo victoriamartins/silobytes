@@ -1,5 +1,6 @@
 package com.mycompany.util;
 
+import com.mycompany.modelo.Aluguel;
 import com.mycompany.modelo.Produtor;
 import com.mycompany.modelo.Silo;
 import com.mycompany.modelo.Usuario;
@@ -39,7 +40,6 @@ public class ArquivoTest {
         Usuario u = new Usuario("Bob", "Bob esponja", "123");
         Arquivo.inserir(u);
     }
- 
     @org.junit.jupiter.api.Test
     public void testInserirProdutor(){
         Produtor p = new Produtor("João", "4567891564", "19670124");
@@ -53,7 +53,6 @@ public class ArquivoTest {
             System.out.println(u.getNome());
         }
     }
-    
     @org.junit.jupiter.api.Test
     public void testListarProdutor(){
         ArrayList<Produtor> lista = ArquivoProdutor.listar();
@@ -70,7 +69,6 @@ public class ArquivoTest {
         Produtor p = new Produtor("João", "4567891564", LocalDate.of(1950, 3, 2), "14998062934");
         ArquivoProdutor.inserir(p);
     }
-    
     @org.junit.jupiter.api.Test
     public void testListarProdutor(){
         ArrayList<Produtor> lista = ArquivoProdutor.listar();
@@ -79,12 +77,12 @@ public class ArquivoTest {
             System.out.println(p.getNome());
         }
     }
+    
     @org.junit.jupiter.api.Test
     public void testInserirSilo() {
         Silo s = new Silo("Rodovia Teste, 404. Fartura - SP", 50.2, false);
         ArquivoSilo.inserir(s);
-    }
-   
+    }   
     @org.junit.jupiter.api.Test
     public void testListarSilos(){
         ArrayList<Silo> lista = ArquivoSilo.listar();
@@ -94,6 +92,24 @@ public class ArquivoTest {
             System.out.println(s.getCapacidade());
         }
     }
+    
+    @org.junit.jupiter.api.Test
+    public void testInserirAlguel() {
+        Silo s = new Silo("Exemplo Aluguel, 702. Abatiá - PR", 78, false);
+        Produtor p = new Produtor("Jéssica", "15478931577", LocalDate.of(1986, 12, 24), "1895878964");
+        // comparar o quanto quer alugar com o disponivel
+        Aluguel a = new Aluguel(p, s, 60, LocalDate.of(2021, 02, 10));
+        // atualizar capacidade do silo
+        ArquivoAluguel.inserir(a);
+    }
+    @org.junit.jupiter.api.Test
+    public void testListarAluguel(){
+        ArrayList<Aluguel> lista = ArquivoAluguel.listar();
+        for(Aluguel a:lista){
+            System.out.println("*********");
+            System.out.println(a.getProdutor().getNome());
+            System.out.println(a.getSilo().getEndereco());
+        }
+    }
      */
-
 }

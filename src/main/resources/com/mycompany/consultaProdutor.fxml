@@ -87,7 +87,6 @@
                <font>
                   <Font size="24.0" />
                </font></Label>
-            <Button fx:id="btnAlterar" layoutX="295.0" layoutY="293.0" mnemonicParsing="false" text="Alterar" />
       </children>
     </AnchorPane>
   </children>

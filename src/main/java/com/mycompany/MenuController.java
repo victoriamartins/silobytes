@@ -28,4 +28,9 @@ public class MenuController {
     private void consultarProdutor() throws IOException{
         App.setRoot("consultaProdutor");
     }
+    
+    @FXML 
+    private void consultarSilo() throws IOException{
+        App.setRoot("consultaSilo");
+    }
 }

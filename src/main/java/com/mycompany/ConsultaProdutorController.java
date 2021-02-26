@@ -29,13 +29,11 @@ public class ConsultaProdutorController {
 
     @FXML
     private TextField campoTelefone;
-
-    @FXML
-    private Button btnAlterar;
     
     @FXML
     public void initialize(){
         this.proximoProdutor();
+        campoNasc.setDisable(true);
     }
    
     @FXML
