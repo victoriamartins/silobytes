@@ -53,6 +53,7 @@ public class ArquivoTest {
             System.out.println(u.getNome());
         }
     }
+    
     @org.junit.jupiter.api.Test
     public void testListarProdutor(){
         ArrayList<Produtor> lista = ArquivoProdutor.listar();
@@ -63,8 +64,6 @@ public class ArquivoTest {
             System.out.println(p.getNascimento());
         }
     }
-    
-    @org.junit.jupiter.api.Test
     public void testInserirProdutor(){
         Produtor p = new Produtor("João", "4567891564", LocalDate.of(1950, 3, 2), "14998062934");
         ArquivoProdutor.inserir(p);
@@ -109,7 +108,18 @@ public class ArquivoTest {
             System.out.println("*********");
             System.out.println(a.getProdutor().getNome());
             System.out.println(a.getSilo().getEndereco());
+            System.out.println(a.getInicioAluguel());
         }
     }
      */
+    
+    @org.junit.jupiter.api.Test
+    public void testListar(){
+        ArrayList<Usuario> lista = Arquivo.listar();
+        for(Usuario u:lista){
+            System.out.println(u.getLogin());
+            System.out.println(u.getSenha());
+        }
+    }
+    
 }

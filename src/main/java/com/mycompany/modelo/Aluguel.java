@@ -8,12 +8,12 @@ import java.time.LocalDate;
 public class Aluguel implements Serializable{
     Produtor produtor;
     Silo silo;
-    int espacoAlugado;
+    double espacoAlugado;
     LocalDate fimAluguel, inicioAluguel;
     double total;
     boolean pago;
 
-    public Aluguel(Produtor produtor, Silo silo, int espacoAlugado, LocalDate inicioAluguel) {
+    public Aluguel(Produtor produtor, Silo silo, double espacoAlugado, LocalDate inicioAluguel) {
         this.produtor = produtor;
         this.silo = silo;
         this.espacoAlugado = espacoAlugado;
@@ -38,7 +38,7 @@ public class Aluguel implements Serializable{
         return silo;
     }
 
-    public int getEspacoAlugado() {
+    public double getEspacoAlugado() {
         return espacoAlugado;
     }
 
@@ -66,7 +66,7 @@ public class Aluguel implements Serializable{
         this.silo = silo;
     }
 
-    public void setEspacoAlugado(int espacoAlugado) {
+    public void setEspacoAlugado(double espacoAlugado) {
         this.espacoAlugado = espacoAlugado;
     }
 

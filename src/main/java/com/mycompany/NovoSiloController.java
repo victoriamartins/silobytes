@@ -2,6 +2,7 @@ package com.mycompany;
 
 import com.mycompany.modelo.Silo;
 import com.mycompany.util.ArquivoSilo;
+import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -52,8 +53,8 @@ public class NovoSiloController {
         campoEstado.setText("");
         campoCapacidade.setValue(0);
     }
-    @FXML
-    private void sair(){
-        System.exit(0);
+    @FXML 
+    private void voltarMenu() throws IOException{
+        App.setRoot("menu");
     }
 }

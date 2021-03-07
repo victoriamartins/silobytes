@@ -2,6 +2,7 @@ package com.mycompany;
 
 import com.mycompany.modelo.Produtor;
 import com.mycompany.util.ArquivoProdutor;
+import java.io.IOException;
 import java.time.LocalDate;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -53,8 +54,9 @@ public class NovoProdutorController {
         campoNascimento.getEditor().clear();
         campoNome.setText("");
     }
-    @FXML
-    private void sair(){
-        System.exit(0);
+
+    @FXML 
+    private void voltarMenu() throws IOException{
+        App.setRoot("menu");
     }
 }

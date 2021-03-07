@@ -18,8 +18,8 @@ public class Produtor implements Serializable{
         this.nascimento = nascimento;
         this.cpf = cpf;
         this.telefone = telefone;
-    }
-
+    }   
+    
     public String getNome() {
         return nome;
     }

@@ -33,4 +33,9 @@ public class MenuController {
     private void consultarSilo() throws IOException{
         App.setRoot("consultaSilo");
     }
+    
+    @FXML 
+    private void cadastrarAluguel() throws IOException{
+        App.setRoot("novoAluguel");
+    }
 }

@@ -6,9 +6,11 @@ com\mycompany\ConsultaSiloController.class
 com\mycompany\util\ArquivoAluguel.class
 com\mycompany\util\ArquivoProdutor.class
 module-info.class
+com\mycompany\LoginController.class
 com\mycompany\modelo\Usuario.class
 com\mycompany\util\Info.class
 com\mycompany\PrimaryController.class
+com\mycompany\NovoAluguelController.class
 com\mycompany\NovoProdutorController.class
 com\mycompany\NovoSiloController.class
 com\mycompany\util\Arquivo.class

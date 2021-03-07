@@ -2,6 +2,7 @@ package com.mycompany;
 
 import com.mycompany.modelo.Usuario;
 import com.mycompany.util.Arquivo;
+import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -24,9 +25,9 @@ public class NovoUsuarioController {
         campoSenha.setText("");
     }
     
-    @FXML
-    private void sair(){
-        System.exit(0);
+    @FXML 
+    private void voltarMenu() throws IOException{
+        App.setRoot("menu");
     }
     
     @FXML

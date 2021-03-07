@@ -14,6 +14,12 @@ public class Usuario implements Serializable{
         this.nome = nome;
         this.senha = senha;
     }
+
+    @Override
+    public String toString() {
+        return "Usuario{" + "login=" + login + ", nome=" + nome + ", senha=" + senha + '}';
+    }
+    
     public String getLogin() {
         return login;
     }
