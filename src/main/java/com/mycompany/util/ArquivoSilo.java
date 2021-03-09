@@ -4,6 +4,7 @@ import com.mycompany.modelo.Silo;
 import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
@@ -37,4 +38,25 @@ public class ArquivoSilo {
         }
         return lista;
     }    
+        
+    public static void alterar(Silo siloAlterar) {
+        ArrayList<Silo> lista = listar();
+        try {
+            for(Silo s: lista){ 
+                if(s.getEndereco().equals(siloAlterar.getEndereco())
+                        && s.getCapacidade() == siloAlterar.getCapacidade()){  
+                    s.setEndereco(siloAlterar.getEndereco());
+                    s.setCapacidade(siloAlterar.getCapacidade());
+                    s.setAlugado(siloAlterar.getAlugado());
+                    s.setDisponivel(siloAlterar.getDisponivel());
+                    FileOutputStream fos = new FileOutputStream(Info.ARQUIVO_SILO);
+                    ObjectOutputStream oos = new ObjectOutputStream(fos);
+                    oos.writeObject(lista);
+                    oos.close();
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Erro ao alterar lista!");
+        }
+    }
 }

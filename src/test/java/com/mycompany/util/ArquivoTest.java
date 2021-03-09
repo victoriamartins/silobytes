@@ -111,15 +111,7 @@ public class ArquivoTest {
             System.out.println(a.getInicioAluguel());
         }
     }
+    
      */
-    
-    @org.junit.jupiter.api.Test
-    public void testListar(){
-        ArrayList<Usuario> lista = Arquivo.listar();
-        for(Usuario u:lista){
-            System.out.println(u.getLogin());
-            System.out.println(u.getSenha());
-        }
-    }
-    
+
 }

@@ -14,6 +14,20 @@ public class Silo implements Serializable{
         this.alugado = alugado;
         this.disponivel = capacidade;
     }
+    
+    public Silo(String endereco, double capacidade, boolean alugado, 
+            double disponivel){
+        this.endereco = endereco;
+        this.capacidade = capacidade;
+        this.alugado = alugado;
+        this.disponivel = disponivel;
+    }
+
+    @Override
+    public String toString() {
+        return this.getEndereco();
+    }
+    
     public String getEndereco() {
         return endereco;
     }

@@ -19,6 +19,11 @@ public class Produtor implements Serializable{
         this.cpf = cpf;
         this.telefone = telefone;
     }   
+
+    @Override
+    public String toString() {
+        return this.getNome();
+    }
     
     public String getNome() {
         return nome;
