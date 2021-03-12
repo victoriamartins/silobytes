@@ -1,8 +1,8 @@
 package com.mycompany.util;
 
-import com.mycompany.modelo.Aluguel;
-import com.mycompany.modelo.Produtor;
-import com.mycompany.modelo.Silo;
+import com.mycompany.Aluguel;
+import com.mycompany.Produtor;
+import com.mycompany.Silo;
 import com.mycompany.Usuario;
 import java.time.LocalDate;
 import java.time.Month;
@@ -113,4 +113,14 @@ public class ArquivoTest {
     }
     
      */
+    @org.junit.jupiter.api.Test
+    public void testListarSilos(){
+        ArrayList<Silo> lista = ArquivoSilo.listar();
+        for(Silo s:lista){
+            System.out.println(s.getEndereco());
+            System.out.println(s.getAlugado());
+            System.out.println(s.getCapacidade());
+            System.out.println(s.getDisponivel());
+        }
+    }
 }

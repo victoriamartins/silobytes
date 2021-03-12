@@ -1,8 +1,5 @@
 package com.mycompany;
 
-import com.mycompany.modelo.Aluguel;
-import com.mycompany.modelo.Produtor;
-import com.mycompany.modelo.Silo;
 import com.mycompany.util.ArquivoAluguel;
 import com.mycompany.util.ArquivoProdutor;
 import com.mycompany.util.ArquivoSilo;

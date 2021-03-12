@@ -1,94 +1,64 @@
 package com.mycompany;
 
-import com.mycompany.modelo.Produtor;
 import com.mycompany.util.ArquivoProdutor;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.SelectionMode;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ConsultaProdutorController {
-    ArrayList<Produtor> lista = ArquivoProdutor.listar();
-    int tamanhoLista = lista.size();
-    int pos = -1;
-    
     @FXML
-    private Button btnAnterior;
+    private TableView<Produtor> tbProdutor;
+    @FXML
+    private TableColumn<Produtor, String> colNome;
+    @FXML
+    private TableColumn<Produtor, String> colCpf;
+    @FXML
+    private TableColumn<Produtor, String> colTel;
+    @FXML
+    private TableColumn<Produtor, String> colNasc;
 
-    @FXML
-    private Button btnProximo;
+    private List<Produtor> produtores;
 
-    @FXML
-    private TextField campoNome;
-
-    @FXML
-    private TextField campoCPF;
-
-    @FXML
-    private DatePicker campoNasc;
-
-    @FXML
-    private TextField campoTelefone;
+    private ObservableList<Produtor> listaProdutores; 
+    
+    TableView.TableViewSelectionModel<Produtor> selectionModel; 
     
     @FXML
-    private Label lblCont;
-    
-    @FXML
-    public void initialize(){
-        this.proximoProdutor();
-        campoNasc.setDisable(true);
+    public void initialize() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        produtores = ArquivoProdutor.listar();    
+        colNome = new TableColumn("Nome");    
+        colCpf = new TableColumn("CPF");
+        colTel = new TableColumn("Telefone");
+        colNasc = new TableColumn("Nascimento");
+        
+        colNome.setCellValueFactory(new PropertyValueFactory<>("nome")); 
+        colCpf.setCellValueFactory(new PropertyValueFactory<>("cpf")); 
+        colTel.setCellValueFactory(new PropertyValueFactory<>("telefone")); 
+        colNasc.setCellValueFactory(new PropertyValueFactory<>("nascimento")); 
+               
+        tbProdutor.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);    
+        listaProdutores = FXCollections.observableArrayList(produtores);        
+        tbProdutor.getColumns().addAll(colNome, colNasc, colCpf, colTel);
+        
+        tbProdutor.setItems(listaProdutores);  
+        selectionModel = tbProdutor.getSelectionModel(); 
+        selectionModel.setSelectionMode(SelectionMode.SINGLE);  
     }
-   
-    @FXML
-    public void proximoProdutor(){
-        try {
-            this.setPos(this.getPos() + 1);
-            this.atualizaContagem();
-            campoNome.setText(this.lista.get(pos).getNome());
-            campoNasc.setValue(this.lista.get(pos).getNascimento());
-            campoCPF.setText(this.lista.get(pos).getCpf());
-            campoTelefone.setText(this.lista.get(pos).getTelefone());
-        } catch (IndexOutOfBoundsException e) {
-            this.setPos(this.getPos() - 1);
-            this.atualizaContagem();
-        } catch (Exception e) {
-            System.out.println("Erro " + e);
-        }
-    }
-    
-    @FXML
-    public void produtorAnterior(){
-        try {
-            this.setPos(this.getPos() - 1);
-            this.atualizaContagem();
-            campoNome.setText(this.lista.get(pos).getNome());
-            campoNasc.setValue(this.lista.get(pos).getNascimento());
-            campoCPF.setText(this.lista.get(pos).getCpf());
-            campoTelefone.setText(this.lista.get(pos).getTelefone());
-        } catch (IndexOutOfBoundsException e) {
-            this.setPos(this.getPos() + 1);
-            this.atualizaContagem();
-        } catch (Exception e) {
-            System.out.println("Erro " + e);
-        }
-    }
-    
-    @FXML
-    public void atualizaContagem(){
-        int n = this.pos + 1;
-        lblCont.setText(n + "/" + this.tamanhoLista);
-    }
-    
-    public int getPos() {
-        return pos;
-    }
-    public void setPos(int pos) {
-        this.pos = pos;
-    }
-    
     @FXML 
     private void voltarMenu() throws IOException{
         App.setRoot("menu");

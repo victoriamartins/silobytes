@@ -28,13 +28,11 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -52,25 +50,11 @@
     </MenuBar>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <Button fx:id="btnAnterior" layoutX="123.0" layoutY="175.0" mnemonicParsing="false" onAction="#produtorAnterior" text="&lt;" />
-            <Button fx:id="btnProximo" layoutX="494.0" layoutY="175.0" mnemonicParsing="false" onAction="#proximoProdutor" text="&gt;" />
-            <Label layoutX="200.0" layoutY="114.0" text="Nome" />
-            <Label layoutX="199.0" layoutY="158.0" text="CPF" />
-            <Label layoutX="200.0" layoutY="204.0" text="Nascimento" />
-            <Label layoutX="197.0" layoutY="245.0" text="Telefone" />
-            <TextField fx:id="campoNome" editable="false" layoutX="292.0" layoutY="110.0" />
-            <TextField fx:id="campoCPF" editable="false" layoutX="292.0" layoutY="154.0" />
-            <DatePicker fx:id="campoNasc" editable="false" layoutX="292.0" layoutY="200.0" prefHeight="25.0" prefWidth="149.0" />
-            <TextField fx:id="campoTelefone" editable="false" layoutX="292.0" layoutY="241.0" />
             <Label layoutX="193.0" layoutY="41.0" prefHeight="35.0" prefWidth="255.0" text="Consulta de produtores" textFill="#3700ff">
                <font>
                   <Font size="24.0" />
                </font></Label>
-            <Label fx:id="lblCont" alignment="CENTER_RIGHT" layoutX="408.0" layoutY="285.0" prefHeight="20.0" prefWidth="33.0" text="x/x">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
+            <TableView fx:id="tbProdutor" layoutX="61.0" layoutY="100.0" prefHeight="200.0" prefWidth="519.0" />
       </children>
     </AnchorPane>
   </children>

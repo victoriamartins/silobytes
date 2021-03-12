@@ -2,27 +2,18 @@ package com.mycompany;
 
 import com.mycompany.util.Arquivo;
 import java.io.IOException;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableView;
-import java.io.IOException;
-import java.net.URL;
 import java.util.List;
-import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TableView.TableViewSelectionModel;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class SecondaryController {
-        
+public class ConsultaUsuarioController {
     @FXML
-    private TableView<Usuario> tabela;
+    private TableView<Usuario> tbUsuario;
     @FXML
     private TableColumn<Usuario, String> colunaNome;
     @FXML
@@ -32,12 +23,7 @@ public class SecondaryController {
 
     private ObservableList<Usuario> listaUsuarios; 
     
-    TableViewSelectionModel<Usuario> selectionModel; 
-    
-    @FXML
-    private void switchToPrimary() throws IOException {
-        App.setRoot("primary");
-    }
+    TableView.TableViewSelectionModel<Usuario> selectionModel; 
     
     @FXML
     public void initialize() {
@@ -46,11 +32,15 @@ public class SecondaryController {
         colunaLogin = new TableColumn("Login");
         colunaNome.setCellValueFactory(new PropertyValueFactory<>("nome"));   
         colunaLogin.setCellValueFactory(new PropertyValueFactory<>("login"));        
-        tabela.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);    
+        tbUsuario.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);    
         listaUsuarios = FXCollections.observableArrayList(usuarios);        
-        tabela.getColumns().addAll(colunaNome, colunaLogin);
-        tabela.setItems(listaUsuarios);  
-        selectionModel = tabela.getSelectionModel(); 
+        tbUsuario.getColumns().addAll(colunaNome, colunaLogin);
+        tbUsuario.setItems(listaUsuarios);  
+        selectionModel = tbUsuario.getSelectionModel(); 
         selectionModel.setSelectionMode(SelectionMode.SINGLE);  
+    }
+    @FXML 
+    private void voltarMenu() throws IOException{
+        App.setRoot("menu");
     }
 }

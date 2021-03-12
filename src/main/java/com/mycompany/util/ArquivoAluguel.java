@@ -1,6 +1,6 @@
 package com.mycompany.util;
 
-import com.mycompany.modelo.Aluguel;
+import com.mycompany.Aluguel;
 import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

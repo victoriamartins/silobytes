@@ -1,97 +1,55 @@
 package com.mycompany;
 
-import com.mycompany.modelo.Silo;
 import com.mycompany.util.ArquivoSilo;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.Slider;
-import javafx.scene.control.TextField;
+import javafx.scene.control.SelectionMode;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.CheckBoxTableCell;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ConsultaSiloController {
-    
-    ArrayList<Silo> lista = ArquivoSilo.listar();
-    int tamanhoLista = lista.size();
-    int pos = -1;
-    
     @FXML
-    private TextField campoEndereco;
+    private TableView<Silo> tbSilo;
+    @FXML
+    private TableColumn<Silo, String> colEndereco;
+    @FXML
+    private TableColumn<Silo, Double> colCapacidade;
+    @FXML
+    private TableColumn<Silo, Double> colDisponivel;
+    @FXML
+    private TableColumn<Silo, Boolean> colAlugado;
+
+    private List<Silo> silos;
+
+    private ObservableList<Silo> listaSilos; 
+    
+    TableView.TableViewSelectionModel<Silo> selectionModel; 
 
     @FXML
-    private Slider sliderCapacidade;
-
-    @FXML
-    private CheckBox checkAlugado;
-
-    @FXML
-    private Slider sliderDisponivel;
-
-    @FXML
-    private Button btnProximo;
-
-    @FXML
-    private Button btnAnterior;
-    
-    @FXML
-    private Label lblCont;
-    
-    @FXML
-    public void initialize(){
-        this.proximoSilo();
-        this.campoEndereco.setEditable(false);
-        this.sliderCapacidade.setDisable(true);
-        this.sliderDisponivel.setDisable(true);
-    }
-    
-    @FXML
-    public void proximoSilo(){
-        try {
-            this.setPos(this.getPos() + 1);
-            this.atualizaContagem();
-            campoEndereco.setText(this.lista.get(this.pos).getEndereco());
-            sliderCapacidade.setValue(this.lista.get(this.pos).getCapacidade());
-            sliderDisponivel.setValue(this.lista.get(this.pos).getDisponivel());
-            checkAlugado.setSelected(this.lista.get(this.pos).getAlugado());
-        } catch (IndexOutOfBoundsException e) {
-            this.setPos(this.getPos() - 1);
-            this.atualizaContagem();
-        } catch (Exception e) {
-            System.out.println("Erro " + e);
-        }
-    }
-    
-    @FXML
-    public void siloAnterior(){
-        try {
-            this.setPos(this.getPos() - 1);
-            this.atualizaContagem();
-            campoEndereco.setText(this.lista.get(this.pos).getEndereco());
-            sliderCapacidade.setValue(this.lista.get(this.pos).getCapacidade());
-            sliderDisponivel.setValue(this.lista.get(this.pos).getDisponivel());
-            checkAlugado.setSelected(this.lista.get(this.pos).getAlugado());
-        } catch (IndexOutOfBoundsException e) {
-            this.setPos(this.getPos() + 1);
-            this.atualizaContagem();
-        } catch (Exception e) {
-            System.out.println("Erro " + e);
-        }
-    }
-    
-    @FXML
-    public void atualizaContagem(){
-        int n = this.pos + 1;
-        lblCont.setText(n + "/" + this.tamanhoLista);
-    }
-
-    public int getPos() {
-        return pos;
-    }
-
-    public void setPos(int pos) {
-        this.pos = pos;
+    public void initialize() {
+        silos = ArquivoSilo.listar();    
+        colEndereco = new TableColumn("Endereço");    
+        colCapacidade = new TableColumn("Capacidade (ton)");
+        colDisponivel = new TableColumn("Disponível (ton)");
+        colAlugado = new TableColumn("Alugado");
+        
+        colEndereco.setCellValueFactory(new PropertyValueFactory<>("endereco"));   
+        colCapacidade.setCellValueFactory(new PropertyValueFactory<>("capacidade"));  
+        colDisponivel.setCellValueFactory(new PropertyValueFactory<>("disponivel"));  
+        colAlugado.setCellValueFactory(new PropertyValueFactory<>("alugado")); 
+              
+        
+        tbSilo.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);    
+        listaSilos = FXCollections.observableArrayList(silos);        
+        tbSilo.getColumns().addAll(colEndereco, colCapacidade, colDisponivel, colAlugado);
+        tbSilo.setItems(listaSilos);  
+        selectionModel = tbSilo.getSelectionModel(); 
+        selectionModel.setSelectionMode(SelectionMode.SINGLE);  
     }
     
     @FXML 

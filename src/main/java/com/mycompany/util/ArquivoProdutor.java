@@ -1,6 +1,6 @@
 package com.mycompany.util;
 
-import com.mycompany.modelo.Produtor;
+import com.mycompany.Produtor;
 import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

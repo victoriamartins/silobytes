@@ -1,6 +1,5 @@
 package com.mycompany;
 
-import com.mycompany.modelo.Silo;
 import com.mycompany.util.ArquivoSilo;
 import java.io.IOException;
 import javafx.fxml.FXML;

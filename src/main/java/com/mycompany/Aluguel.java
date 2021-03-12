@@ -1,7 +1,7 @@
-package com.mycompany.modelo;
+package com.mycompany;
 
-import com.mycompany.modelo.Produtor;
-import com.mycompany.modelo.Silo;
+import com.mycompany.Produtor;
+import com.mycompany.Silo;
 import java.io.Serializable;
 import java.time.LocalDate;
 

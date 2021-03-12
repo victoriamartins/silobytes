@@ -1,6 +1,6 @@
 package com.mycompany.util;
 
-import com.mycompany.modelo.Silo;
+import com.mycompany.Silo;
 import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

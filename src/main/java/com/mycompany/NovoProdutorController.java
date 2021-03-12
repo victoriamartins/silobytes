@@ -1,6 +1,5 @@
 package com.mycompany;
 
-import com.mycompany.modelo.Produtor;
 import com.mycompany.util.ArquivoProdutor;
 import java.io.IOException;
 import java.time.LocalDate;
