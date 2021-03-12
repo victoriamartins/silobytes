@@ -1,11 +1,12 @@
 package com.mycompany;
 
-import com.mycompany.modelo.Usuario;
 import com.mycompany.util.Arquivo;
+import java.io.IOException;
 import java.util.ArrayList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 public class LoginController {
@@ -15,7 +16,7 @@ public class LoginController {
     private TextField campoUsuario;
 
     @FXML
-    private TextField campoSenha;
+    private PasswordField campoSenha;
 
     @FXML
     private Button btnEntrar;
@@ -24,7 +25,10 @@ public class LoginController {
     private Label lblEsqueceu;
 
     @FXML
-    private Button btnSair;    
+    private Button btnSair;   
+    
+    @FXML
+    private Label lblErro;
     
     @FXML
     private void sair(){
@@ -32,8 +36,21 @@ public class LoginController {
     }
     
     @FXML
-    private void entrar(){
+    private void entrar() throws IOException{
         String usuario = campoUsuario.getText();
         String senha = campoSenha.getText();
+        
+        for (Usuario u: lista) {
+            if (u.getLogin().equals(usuario)
+                    && u.getSenha().equals(senha)) {
+                this.acessaMenu();
+            }
+        }
+        lblErro.setText("Usuário e/ou senha incorretos.");
+    }
+    
+    @FXML 
+    private void acessaMenu() throws IOException{
+        App.setRoot("menu");
     }
 }

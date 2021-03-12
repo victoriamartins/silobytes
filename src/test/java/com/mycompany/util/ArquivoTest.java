@@ -3,7 +3,7 @@ package com.mycompany.util;
 import com.mycompany.modelo.Aluguel;
 import com.mycompany.modelo.Produtor;
 import com.mycompany.modelo.Silo;
-import com.mycompany.modelo.Usuario;
+import com.mycompany.Usuario;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
@@ -113,5 +113,4 @@ public class ArquivoTest {
     }
     
      */
-
 }

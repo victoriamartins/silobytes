@@ -1,6 +1,5 @@
 package com.mycompany;
 
-import com.mycompany.modelo.Usuario;
 import com.mycompany.util.Arquivo;
 import java.io.IOException;
 import javafx.fxml.FXML;

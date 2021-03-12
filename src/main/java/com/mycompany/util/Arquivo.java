@@ -1,6 +1,6 @@
 package com.mycompany.util;
 
-import com.mycompany.modelo.Usuario;
+import com.mycompany.Usuario;
 import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -18,7 +18,7 @@ public class Arquivo {
             oos.writeObject(atual);
             oos.close();
         } catch (Exception e) {
-            System.out.println("Erro ao inserir usuário.");
+            System.out.println("Erro ao inserir usuário." + e);
         }
     }
     public static ArrayList<Usuario> listar(){
@@ -33,9 +33,25 @@ public class Arquivo {
         } catch (EOFException e){
             return lista;
         } catch (Exception e) {
-            System.out.println("Erro ao carregar usuarios.");
+            System.out.println("Erro ao carregar usuarios."+ e);
         }
         return lista;
     }
-
+    public static void alterar(Usuario usuarioAlt) {
+        ArrayList<Usuario> lista = listar();
+        try {
+            for(Usuario u: lista){ 
+                if(usuarioAlt.getLogin().equals(u.getLogin())){  
+                    u.setNome(usuarioAlt.getNome());
+                    u.setSenha(usuarioAlt.getSenha());
+                    FileOutputStream fos = new FileOutputStream(Info.ARQUIVO_USUARIO);
+                    ObjectOutputStream oos = new ObjectOutputStream(fos);
+                    oos.writeObject(lista);
+                    oos.close();
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Erro ao alterar lista!");
+        }
+    }
 }

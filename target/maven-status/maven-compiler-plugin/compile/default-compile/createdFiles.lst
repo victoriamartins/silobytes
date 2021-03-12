@@ -4,10 +4,10 @@ com\mycompany\modelo\Aluguel.class
 com\mycompany\SecondaryController.class
 com\mycompany\ConsultaSiloController.class
 com\mycompany\util\ArquivoAluguel.class
+com\mycompany\Usuario.class
 com\mycompany\util\ArquivoProdutor.class
 module-info.class
 com\mycompany\LoginController.class
-com\mycompany\modelo\Usuario.class
 com\mycompany\util\Info.class
 com\mycompany\PrimaryController.class
 com\mycompany\NovoAluguelController.class
