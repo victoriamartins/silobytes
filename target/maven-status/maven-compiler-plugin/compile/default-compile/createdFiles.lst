@@ -5,6 +5,7 @@ com\mycompany\util\ArquivoAluguel.class
 com\mycompany\Usuario.class
 com\mycompany\util\ArquivoProdutor.class
 module-info.class
+com\mycompany\ConsultaAluguelController.class
 com\mycompany\ConsultaUsuarioController.class
 com\mycompany\LoginController.class
 com\mycompany\Aluguel.class

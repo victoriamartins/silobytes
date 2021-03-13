@@ -19,6 +19,18 @@ public class Aluguel implements Serializable{
         this.espacoAlugado = espacoAlugado;
         this.inicioAluguel = inicioAluguel;
     }
+    
+    public Aluguel(Produtor produtor, Silo silo, double espacoAlugado, 
+            LocalDate inicioAluguel, LocalDate fimAluguel, double total,
+            boolean pago){
+        this.produtor = produtor;
+        this.silo = silo;
+        this.espacoAlugado = espacoAlugado;
+        this.inicioAluguel = inicioAluguel;
+        this.fimAluguel = fimAluguel;
+        this.total = total;
+        this.pago = pago;
+    }
 
     public Aluguel() {
         this.produtor = null;

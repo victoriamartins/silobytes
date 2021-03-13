@@ -15,6 +15,11 @@ public class MenuController {
     }
     
     @FXML
+    private void consultarUsuario() throws IOException{
+        App.setRoot("consultaUsuario");
+    }
+    
+    @FXML
     private void cadastrarProdutor () throws IOException{
         App.setRoot("novoProdutor");
     }
@@ -37,5 +42,15 @@ public class MenuController {
     @FXML 
     private void cadastrarAluguel() throws IOException{
         App.setRoot("novoAluguel");
+    }
+    
+    @FXML 
+    private void trocarUsuario() throws IOException{
+        App.setRoot("login");
+    }
+    
+    @FXML 
+    private void consultarAluguel() throws IOException{
+        App.setRoot("consultaAluguel");
     }
 }

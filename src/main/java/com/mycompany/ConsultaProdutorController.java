@@ -2,21 +2,13 @@ package com.mycompany;
 
 import com.mycompany.util.ArquivoProdutor;
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
 import javafx.scene.control.SelectionMode;
-import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ConsultaProdutorController {
@@ -39,7 +31,6 @@ public class ConsultaProdutorController {
     
     @FXML
     public void initialize() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         produtores = ArquivoProdutor.listar();    
         colNome = new TableColumn("Nome");    
         colCpf = new TableColumn("CPF");

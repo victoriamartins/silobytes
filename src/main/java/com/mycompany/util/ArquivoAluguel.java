@@ -37,4 +37,25 @@ public class ArquivoAluguel {
         }
         return lista;
     }
+    public static void alterar(Aluguel alteracoes) {
+        ArrayList<Aluguel> lista = listar();
+        try {
+            for (Aluguel a: lista) {
+                if (a.getInicioAluguel().equals(alteracoes.getInicioAluguel())
+                        && a.getEspacoAlugado() == alteracoes.getEspacoAlugado()
+                        && a.getProdutor().getNome().equals(alteracoes.getProdutor().getNome())
+                        && a.getSilo().getEndereco().equals(alteracoes.getSilo().getEndereco())) {
+                    a.setFimAluguel(alteracoes.getFimAluguel());
+                    a.setPago(alteracoes.isPago());
+                    a.setTotal(alteracoes.getTotal());
+                    FileOutputStream fos = new FileOutputStream(Info.ARQUIVO_ALUGUEL);
+                    ObjectOutputStream oos = new ObjectOutputStream(fos);
+                    oos.writeObject(lista);
+                    oos.close();
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Erro " + e);
+        }
+    }
 }

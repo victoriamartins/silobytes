@@ -114,13 +114,14 @@ public class ArquivoTest {
     
      */
     @org.junit.jupiter.api.Test
-    public void testListarSilos(){
-        ArrayList<Silo> lista = ArquivoSilo.listar();
-        for(Silo s:lista){
-            System.out.println(s.getEndereco());
-            System.out.println(s.getAlugado());
-            System.out.println(s.getCapacidade());
-            System.out.println(s.getDisponivel());
+    public void testListarAluguel(){
+        ArrayList<Aluguel> lista = ArquivoAluguel.listar();
+        for(Aluguel a:lista){
+            System.out.println("*********");
+            System.out.println(a.getProdutor().getNome());
+            System.out.println(a.getSilo().getEndereco());
+            System.out.println(a.getFimAluguel());
+            System.out.println(a.getTotal());
         }
     }
 }

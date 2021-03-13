@@ -32,16 +32,20 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ConsultaUsuarioController">
+<VBox prefHeight="600.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ConsultaAluguelController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -52,14 +56,22 @@
         </Menu>
       </menus>
     </MenuBar>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="417.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
          <children>
-            <TableView fx:id="tbUsuario" layoutX="105.0" layoutY="93.0" prefHeight="241.0" prefWidth="431.0" />
-            <Label layoutX="209.0" layoutY="38.0" text="Consulta de Usuários" textFill="#2200ff">
+            <Label layoutX="210.0" layoutY="40.0" text="Consulta de aluguéis" textFill="#0000ff">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
+            <TableView fx:id="tbAluguel" layoutX="29.0" layoutY="97.0" prefHeight="228.0" prefWidth="582.0" />
+            <Button fx:id="btnFinalizar" layoutX="28.0" layoutY="346.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#finalizarAluguel" text="Finalizar Aluguel" />
+            <Label fx:id="lblMsgErro" alignment="CENTER_RIGHT" layoutX="168.0" layoutY="347.0" prefHeight="17.0" prefWidth="443.0" textAlignment="RIGHT" />
+            <DatePicker fx:id="dtFinal" layoutX="157.0" layoutY="389.0" onAction="#calculaValor" />
+            <TextField fx:id="campoTotal" layoutX="157.0" layoutY="429.0" prefHeight="25.0" prefWidth="174.0" />
+            <CheckBox fx:id="cbPago" layoutX="29.0" layoutY="470.0" mnemonicParsing="false" text="Pago" />
+            <Label layoutX="29.0" layoutY="393.0" text="Data final do aluguel" />
+            <Label layoutX="29.0" layoutY="433.0" text="Total" />
+            <Button layoutX="279.0" layoutY="466.0" mnemonicParsing="false" onAction="#salvarFinalizacao" text="Salvar" />
          </children>
     </AnchorPane>
   </children>
