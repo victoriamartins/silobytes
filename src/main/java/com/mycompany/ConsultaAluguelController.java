@@ -25,6 +25,10 @@ public class ConsultaAluguelController {
     @FXML
     private Button btnFinalizar;
     @FXML
+    private Button btnPagar;
+    @FXML
+    private Button btnCancelar;
+    @FXML
     private Button btnSalvar;
     @FXML
     private Label lblMsgErro;
@@ -93,12 +97,13 @@ public class ConsultaAluguelController {
     }
     
     @FXML
-    private void finalizarAluguel() {
+    private void finalizarAluguel() { // falta "devolver" o espaco ao silo
         try {
             selecao = tbAluguel.getSelectionModel().getSelectedItem();
             if (selecao.getFimAluguel() != null) {
                 lblMsgErro.setText(("Aluguel já finalizado."));
             } else {
+                visibilidade(true);
                 alteracoes.setProdutor(selecao.getProdutor());
                 alteracoes.setSilo(selecao.getSilo());
                 alteracoes.setEspacoAlugado(selecao.getEspacoAlugado());
@@ -133,10 +138,64 @@ public class ConsultaAluguelController {
                 alteracoes.setTotal(this.total);
                 alteracoes.setFimAluguel(dtFinal.getValue());
                 ArquivoAluguel.alterar(alteracoes);
+                cancelar(); // limpa campos, esconde, retira selecao e att tabela
             }
         } catch (Exception e) {
             System.out.println(e);
         }
+    }
+    
+    @FXML
+    public void pagar(){
+        try {
+            selecao = tbAluguel.getSelectionModel().getSelectedItem();
+            if (selecao.isPago() == true) {
+                lblMsgErro.setText("O aluguel já está pago!");
+            } else if (selecao.getFimAluguel() == null) { // nao esta pago nem finalizado
+                lblMsgErro.setText("Finalize o aluguel para que possa ser pago!");
+            } else { // finalizado e nao pago
+                alteracoes = null;
+                long diferencaEmDias = ChronoUnit.DAYS.between(
+                selecao.getInicioAluguel(),
+                selecao.getFimAluguel());
+                
+                this.total = diferencaEmDias * 17.5;
+                alteracoes = new Aluguel(selecao.getProdutor(), 
+                        selecao.getSilo(), 
+                        selecao.getEspacoAlugado(), 
+                        selecao.getInicioAluguel(), 
+                        selecao.getFimAluguel(), total, true);
+                
+                ArquivoAluguel.alterar(alteracoes);
+                cancelar();
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    
+    @FXML
+    public void cancelar(){
+        selecao = null;
+        limparCampos();
+        visibilidade(false);
+        initialize();
+    }
+    
+    private void limparCampos(){
+        dtFinal.setValue(null);
+        campoTotal.setText("");
+        cbPago.setSelected(false);
+    }
+    
+    private void visibilidade(boolean estado) {
+        lbl1.setVisible(estado);
+        lbl2.setVisible(estado);
+        dtFinal.setVisible(estado);
+        cbPago.setVisible(estado);
+        campoTotal.setVisible(estado);
+        btnSalvar.setVisible(estado);
+        btnCancelar.setVisible(estado);
     }
     
     @FXML 
