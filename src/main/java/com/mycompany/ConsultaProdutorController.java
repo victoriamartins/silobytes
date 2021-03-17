@@ -1,8 +1,10 @@
 package com.mycompany;
 
+import com.mycompany.util.ArquivoAluguel;
 import com.mycompany.util.ArquivoProdutor;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -73,13 +75,23 @@ public class ConsultaProdutorController {
                         campoNasc.getValue(), 
                         campoTel.getText());
                 ArquivoProdutor.alterar(novo);
+                ArrayList<Aluguel> listaAluguel = ArquivoAluguel.listar();
+                for (Aluguel a: listaAluguel) {
+                    if (a.getProdutor().getCpf().equals(selecao.getCpf())){
+                        a.setProdutor(novo);
+                        System.out.println(a.getProdutor().getNome());
+                        ArquivoAluguel.alterarProdutor(a);
+                        break;
+                    }
+                }
+                this.cancelar();
             }
         } catch (Exception e) {
             System.out.println(e);
         }
     }
     @FXML
-    private void calcelar(){
+    private void cancelar(){
         campoNome.setText("");
         campoCpf.setText("");
         campoNasc.setValue(null);

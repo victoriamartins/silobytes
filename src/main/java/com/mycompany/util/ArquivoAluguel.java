@@ -58,4 +58,21 @@ public class ArquivoAluguel {
             System.out.println("Erro " + e);
         }
     }
+    public static void alterarProdutor(Aluguel alteracoes) {
+        ArrayList<Aluguel> lista = listar();
+        try {
+            for (Aluguel a: lista) {
+                if (a.getProdutor().getCpf().equals(alteracoes.getProdutor().getCpf())) {
+                    System.out.println("achou");
+                    a.setProdutor(alteracoes.getProdutor());
+                    FileOutputStream fos = new FileOutputStream(Info.ARQUIVO_ALUGUEL);
+                    ObjectOutputStream oos = new ObjectOutputStream(fos);
+                    oos.writeObject(lista);
+                    oos.close();
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Erro " + e);
+        }
+    }
 }

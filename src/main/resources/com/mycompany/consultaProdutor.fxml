@@ -67,7 +67,7 @@
             <TextField fx:id="campoCpf" editable="false" layoutX="423.0" layoutY="356.0" prefHeight="25.0" prefWidth="157.0" visible="false" />
             <Label fx:id="lbl4" layoutX="347.0" layoutY="404.0" text="Nascimento" visible="false" />
             <DatePicker fx:id="campoNasc" layoutX="423.0" layoutY="400.0" prefHeight="25.0" prefWidth="157.0" visible="false" />
-            <Button fx:id="btnCancelar" layoutX="423.0" layoutY="447.0" mnemonicParsing="false" onAction="#calcelar" text="Cancelar" visible="false" />
+            <Button fx:id="btnCancelar" layoutX="423.0" layoutY="447.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" visible="false" />
             <Button fx:id="btnSalvar" layoutX="532.0" layoutY="447.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" visible="false" />
       </children>
     </AnchorPane>
