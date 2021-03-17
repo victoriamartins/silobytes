@@ -28,11 +28,14 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -50,11 +53,22 @@
     </MenuBar>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <Label layoutX="193.0" layoutY="41.0" prefHeight="35.0" prefWidth="255.0" text="Consulta de produtores" textFill="#3700ff">
+            <Label layoutX="193.0" layoutY="36.0" prefHeight="35.0" prefWidth="255.0" text="Consulta de produtores" textFill="#3700ff">
                <font>
                   <Font size="24.0" />
                </font></Label>
-            <TableView fx:id="tbProdutor" layoutX="61.0" layoutY="100.0" prefHeight="200.0" prefWidth="519.0" />
+            <TableView fx:id="tbProdutor" layoutX="61.0" layoutY="86.0" prefHeight="200.0" prefWidth="519.0" />
+            <Button fx:id="btnAlterar" layoutX="295.0" layoutY="306.0" mnemonicParsing="false" onAction="#copiarDados" text="Alterar" />
+            <Label fx:id="lbl1" layoutX="61.0" layoutY="360.0" text="Nome" visible="false" />
+            <TextField fx:id="campoNome" layoutX="119.0" layoutY="356.0" prefHeight="25.0" prefWidth="213.0" visible="false" />
+            <Label fx:id="lbl2" layoutX="61.0" layoutY="404.0" text="Telefone" visible="false" />
+            <TextField fx:id="campoTel" layoutX="119.0" layoutY="400.0" prefHeight="25.0" prefWidth="213.0" visible="false" />
+            <Label fx:id="lbl3" layoutX="390.0" layoutY="360.0" text="CPF" visible="false" />
+            <TextField fx:id="campoCpf" editable="false" layoutX="423.0" layoutY="356.0" prefHeight="25.0" prefWidth="157.0" visible="false" />
+            <Label fx:id="lbl4" layoutX="347.0" layoutY="404.0" text="Nascimento" visible="false" />
+            <DatePicker fx:id="campoNasc" layoutX="423.0" layoutY="400.0" prefHeight="25.0" prefWidth="157.0" visible="false" />
+            <Button fx:id="btnCancelar" layoutX="423.0" layoutY="447.0" mnemonicParsing="false" onAction="#calcelar" text="Cancelar" visible="false" />
+            <Button fx:id="btnSalvar" layoutX="532.0" layoutY="447.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" visible="false" />
       </children>
     </AnchorPane>
   </children>

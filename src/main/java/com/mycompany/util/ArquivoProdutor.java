@@ -37,4 +37,23 @@ public class ArquivoProdutor {
         }
         return lista;
     }
+    public static void alterar(Produtor prodAlterar) {
+        ArrayList<Produtor> lista = listar();
+        try {
+            for(Produtor p: lista){ 
+                if(p.getCpf().equals(prodAlterar.getCpf())){  
+                    p.setNome(prodAlterar.getNome());
+                    p.setNascimento(prodAlterar.getNascimento());
+                    p.setTelefone(prodAlterar.getTelefone());
+                    
+                    FileOutputStream fos = new FileOutputStream(Info.ARQUIVO_PRODUTOR);
+                    ObjectOutputStream oos = new ObjectOutputStream(fos);
+                    oos.writeObject(lista);
+                    oos.close();
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Erro ao alterar lista!");
+        }
+    }
 }
