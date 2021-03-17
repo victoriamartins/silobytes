@@ -1,6 +1,7 @@
 package com.mycompany;
 
 import com.mycompany.util.ArquivoAluguel;
+import com.mycompany.util.ArquivoSilo;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -97,7 +98,7 @@ public class ConsultaAluguelController {
     }
     
     @FXML
-    private void finalizarAluguel() { // falta "devolver" o espaco ao silo
+    private void finalizarAluguel() {
         try {
             selecao = tbAluguel.getSelectionModel().getSelectedItem();
             if (selecao.getFimAluguel() != null) {
@@ -137,8 +138,24 @@ public class ConsultaAluguelController {
                 alteracoes.setPago(cbPago.isSelected());
                 alteracoes.setTotal(this.total);
                 alteracoes.setFimAluguel(dtFinal.getValue());
+                
+                Silo silo = selecao.getSilo();
+                Silo altSilo = new Silo();
+                
+                if (silo.getAlugado()) { // se antes estava alugado, nao esta mais
+                    altSilo.setAlugado(false);
+                }
+                
+                altSilo.setEndereco(silo.getEndereco());
+                altSilo.setCapacidade(silo.getCapacidade());
+                System.out.println("Disp " + silo.getDisponivel() + " esp " + selecao.getEspacoAlugado());
+                altSilo.setDisponivel(silo.getDisponivel() 
+                        + selecao.getEspacoAlugado());
+                
+                ArquivoSilo.alterar(altSilo);
                 ArquivoAluguel.alterar(alteracoes);
                 cancelar(); // limpa campos, esconde, retira selecao e att tabela
+                lblMsgErro.setText("Aluguel finalizado!");
             }
         } catch (Exception e) {
             System.out.println(e);
@@ -165,7 +182,7 @@ public class ConsultaAluguelController {
                         selecao.getEspacoAlugado(), 
                         selecao.getInicioAluguel(), 
                         selecao.getFimAluguel(), total, true);
-                
+                lblMsgErro.setText("Pagamento realizado.");
                 ArquivoAluguel.alterar(alteracoes);
                 cancelar();
             }
@@ -179,7 +196,6 @@ public class ConsultaAluguelController {
         selecao = null;
         limparCampos();
         visibilidade(false);
-        initialize();
     }
     
     private void limparCampos(){

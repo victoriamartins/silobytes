@@ -44,7 +44,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.NovoAluguelController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.NovoAluguelController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -58,22 +58,22 @@
     </MenuBar>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <ComboBox fx:id="comboProdutor" layoutX="199.0" layoutY="88.0" prefHeight="25.0" prefWidth="315.0" />
-            <ComboBox fx:id="comboSilo" layoutX="199.0" layoutY="135.0" prefHeight="25.0" prefWidth="315.0" />
-            <Slider fx:id="sliderEspaco" blockIncrement="5.0" layoutX="199.0" layoutY="204.0" max="150.0" prefHeight="14.0" prefWidth="315.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
-            <DatePicker fx:id="dataAluguel" layoutX="319.0" layoutY="269.0" prefHeight="25.0" prefWidth="195.0" />
-            <Label layoutX="126.0" layoutY="92.0" text="Produtor" />
-            <Label layoutX="126.0" layoutY="139.0" text="Silo" />
-            <Label layoutX="199.0" layoutY="183.0" text="Espaço alugado" />
-            <Label layoutX="199.0" layoutY="273.0" text="Data de aluguel" />
-            <Label layoutX="213.0" layoutY="39.0" text="Cadastro de aluguel" textFill="#4d00ff">
+            <ComboBox fx:id="comboProdutor" layoutX="199.0" layoutY="133.0" prefHeight="25.0" prefWidth="315.0" />
+            <ComboBox fx:id="comboSilo" layoutX="199.0" layoutY="180.0" prefHeight="25.0" prefWidth="315.0" />
+            <Slider fx:id="sliderEspaco" blockIncrement="5.0" layoutX="199.0" layoutY="249.0" max="150.0" prefHeight="14.0" prefWidth="315.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+            <DatePicker fx:id="dataAluguel" layoutX="319.0" layoutY="314.0" prefHeight="25.0" prefWidth="195.0" />
+            <Label layoutX="126.0" layoutY="137.0" text="Produtor" />
+            <Label layoutX="126.0" layoutY="184.0" text="Silo" />
+            <Label layoutX="199.0" layoutY="228.0" text="Espaço alugado" />
+            <Label layoutX="199.0" layoutY="318.0" text="Data de aluguel" />
+            <Label layoutX="213.0" layoutY="84.0" text="Cadastro de aluguel" textFill="#4d00ff">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Button fx:id="btnCadastrar" layoutX="447.0" layoutY="320.0" mnemonicParsing="false" onAction="#cadastrar" text="Cadastrar" />
-            <Label fx:id="lblMsg" layoutX="199.0" layoutY="369.0" prefHeight="17.0" prefWidth="315.0" />
-            <Button fx:id="btnLimpar" layoutX="199.0" layoutY="320.0" mnemonicParsing="false" onAction="#limpar" text="Limpar" />
+            <Button fx:id="btnCadastrar" layoutX="447.0" layoutY="365.0" mnemonicParsing="false" onAction="#cadastrar" text="Cadastrar" />
+            <Label fx:id="lblMsg" layoutX="199.0" layoutY="414.0" prefHeight="17.0" prefWidth="315.0" />
+            <Button fx:id="btnLimpar" layoutX="199.0" layoutY="365.0" mnemonicParsing="false" onAction="#limpar" text="Limpar" />
       </children>
     </AnchorPane>
   </children>

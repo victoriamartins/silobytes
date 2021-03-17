@@ -41,7 +41,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ConsultaUsuarioController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ConsultaUsuarioController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -54,8 +54,8 @@
     </MenuBar>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
-            <TableView fx:id="tbUsuario" layoutX="105.0" layoutY="93.0" prefHeight="241.0" prefWidth="431.0" />
-            <Label layoutX="209.0" layoutY="38.0" text="Consulta de Usuários" textFill="#2200ff">
+            <TableView fx:id="tbUsuario" layoutX="63.0" layoutY="136.0" prefHeight="259.0" prefWidth="514.0" />
+            <Label layoutX="208.0" layoutY="74.0" text="Consulta de Usuários" textFill="#2200ff">
                <font>
                   <Font size="24.0" />
                </font>

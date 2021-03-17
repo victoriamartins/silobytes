@@ -42,9 +42,7 @@ public class ConsultaSiloController {
         colCapacidade.setCellValueFactory(new PropertyValueFactory<>("capacidade"));  
         colDisponivel.setCellValueFactory(new PropertyValueFactory<>("disponivel"));  
         colAlugado.setCellValueFactory(new PropertyValueFactory<>("alugado")); 
-              
-        
-        tbSilo.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);    
+               
         listaSilos = FXCollections.observableArrayList(silos);        
         tbSilo.getColumns().addAll(colEndereco, colCapacidade, colDisponivel, colAlugado);
         tbSilo.setItems(listaSilos);  

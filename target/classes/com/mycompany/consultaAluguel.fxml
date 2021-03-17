@@ -45,7 +45,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="600.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ConsultaAluguelController">
+<VBox prefHeight="540.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ConsultaAluguelController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -58,22 +58,22 @@
     </MenuBar>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="417.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
          <children>
-            <Label layoutX="210.0" layoutY="40.0" text="Consulta de aluguéis" textFill="#0000ff">
+            <Label layoutX="210.0" layoutY="27.0" text="Consulta de aluguéis" textFill="#0000ff">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <TableView fx:id="tbAluguel" layoutX="29.0" layoutY="97.0" prefHeight="228.0" prefWidth="582.0" />
-            <Button fx:id="btnFinalizar" layoutX="29.0" layoutY="356.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#finalizarAluguel" text="Finalizar Aluguel" />
-            <Label fx:id="lblMsgErro" alignment="CENTER" layoutX="83.0" layoutY="334.0" prefHeight="17.0" prefWidth="443.0" textAlignment="RIGHT" />
-            <DatePicker fx:id="dtFinal" layoutX="158.0" layoutY="399.0" onAction="#calculaValor" visible="false" />
-            <TextField fx:id="campoTotal" layoutX="158.0" layoutY="439.0" prefHeight="25.0" prefWidth="174.0" visible="false" />
-            <CheckBox fx:id="cbPago" layoutX="30.0" layoutY="480.0" mnemonicParsing="false" text="Pago" visible="false" />
-            <Label fx:id="lbl1" layoutX="30.0" layoutY="403.0" text="Data final do aluguel" visible="false" />
-            <Label fx:id="lbl2" layoutX="30.0" layoutY="443.0" text="Total" visible="false" />
-            <Button fx:id="btnSalvar" layoutX="280.0" layoutY="476.0" mnemonicParsing="false" onAction="#salvarFinalizacao" text="Salvar" visible="false" />
-            <Button fx:id="btnPagar" layoutX="522.0" layoutY="356.0" mnemonicParsing="false" onAction="#pagar" text="Pagar Aluguel" />
-            <Button fx:id="btnCancelar" layoutX="158.0" layoutY="476.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" visible="false" />
+            <TableView fx:id="tbAluguel" layoutX="29.0" layoutY="84.0" prefHeight="228.0" prefWidth="582.0" />
+            <Button fx:id="btnFinalizar" layoutX="29.0" layoutY="343.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#finalizarAluguel" text="Finalizar Aluguel" />
+            <Label fx:id="lblMsgErro" alignment="CENTER" layoutX="83.0" layoutY="321.0" prefHeight="17.0" prefWidth="443.0" textAlignment="RIGHT" />
+            <DatePicker fx:id="dtFinal" layoutX="158.0" layoutY="386.0" onAction="#calculaValor" visible="false" />
+            <TextField fx:id="campoTotal" layoutX="158.0" layoutY="426.0" prefHeight="25.0" prefWidth="174.0" visible="false" />
+            <CheckBox fx:id="cbPago" layoutX="30.0" layoutY="467.0" mnemonicParsing="false" text="Pago" visible="false" />
+            <Label fx:id="lbl1" layoutX="30.0" layoutY="390.0" text="Data final do aluguel" visible="false" />
+            <Label fx:id="lbl2" layoutX="30.0" layoutY="430.0" text="Total" visible="false" />
+            <Button fx:id="btnSalvar" layoutX="280.0" layoutY="463.0" mnemonicParsing="false" onAction="#salvarFinalizacao" text="Salvar" visible="false" />
+            <Button fx:id="btnPagar" layoutX="522.0" layoutY="343.0" mnemonicParsing="false" onAction="#pagar" text="Pagar Aluguel" />
+            <Button fx:id="btnCancelar" layoutX="158.0" layoutY="463.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" visible="false" />
          </children>
     </AnchorPane>
   </children>

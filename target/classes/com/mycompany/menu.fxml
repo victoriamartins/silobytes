@@ -40,7 +40,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.MenuController">
+<VBox prefHeight="540.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.MenuController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -78,9 +78,9 @@
         </Menu>
       </menus>
     </MenuBar>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane prefHeight="540.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
          <children>
-            <Label alignment="CENTER_RIGHT" layoutX="501.0" layoutY="14.0" prefHeight="52.0" prefWidth="114.0" text="SiloBytes" textAlignment="CENTER" textFill="#0d00ff">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="512.0" layoutY="14.0" prefHeight="52.0" prefWidth="114.0" text="SiloBytes" textFill="#0d00ff">
                <font>
                   <Font size="24.0" />
                </font>

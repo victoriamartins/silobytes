@@ -44,7 +44,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.NovoSiloController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.NovoSiloController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -56,24 +56,24 @@
         <Menu mnemonicParsing="false" text="Ajuda" />
       </menus>
     </MenuBar>
-    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="377.0" prefWidth="641.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="540.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
       <children>
-            <Label layoutX="241.0" layoutY="54.0" text="Cadastro de Silo" textFill="#4400ff">
+            <Label layoutX="241.0" layoutY="124.0" text="Cadastro de Silo" textFill="#4400ff">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <TextField fx:id="campoEndereco" layoutX="223.0" layoutY="118.0" prefHeight="25.0" prefWidth="309.0" />
-            <TextField fx:id="campoCidade" layoutX="223.0" layoutY="159.0" />
-            <TextField fx:id="campoEstado" layoutX="447.0" layoutY="159.0" prefHeight="25.0" prefWidth="85.0" />
-            <Slider fx:id="campoCapacidade" blockIncrement="5.0" layoutX="223.0" layoutY="202.0" max="150.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="38.0" prefWidth="309.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
-            <CheckBox fx:id="campoAlugado" layoutX="223.0" layoutY="263.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="76.0" text="Alugado" />
-            <Label layoutX="109.0" layoutY="122.0" text="Endereço" />
-            <Label layoutX="109.0" layoutY="163.0" text="Cidade" />
-            <Label layoutX="388.0" layoutY="163.0" text="Estado" />
-            <Label layoutX="109.0" layoutY="204.0" text="Capacidade (ton)" />
-            <Button fx:id="btnLimpar" layoutX="223.0" layoutY="297.0" mnemonicParsing="false" onAction="#limparCampos" text="Limpar" />
-            <Button fx:id="btnCadastrar" layoutX="465.0" layoutY="297.0" mnemonicParsing="false" onAction="#cadastrarSilo" text="Cadastrar" />
+            <TextField fx:id="campoEndereco" layoutX="223.0" layoutY="188.0" prefHeight="25.0" prefWidth="309.0" />
+            <TextField fx:id="campoCidade" layoutX="223.0" layoutY="229.0" />
+            <TextField fx:id="campoEstado" layoutX="447.0" layoutY="229.0" prefHeight="25.0" prefWidth="85.0" />
+            <Slider fx:id="campoCapacidade" blockIncrement="5.0" layoutX="223.0" layoutY="272.0" max="150.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="38.0" prefWidth="309.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+            <CheckBox fx:id="campoAlugado" layoutX="223.0" layoutY="333.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="76.0" text="Alugado" />
+            <Label layoutX="109.0" layoutY="192.0" text="Endereço" />
+            <Label layoutX="109.0" layoutY="233.0" text="Cidade" />
+            <Label layoutX="388.0" layoutY="233.0" text="Estado" />
+            <Label layoutX="109.0" layoutY="274.0" text="Capacidade (ton)" />
+            <Button fx:id="btnLimpar" layoutX="223.0" layoutY="367.0" mnemonicParsing="false" onAction="#limparCampos" text="Limpar" />
+            <Button fx:id="btnCadastrar" layoutX="465.0" layoutY="367.0" mnemonicParsing="false" onAction="#cadastrarSilo" text="Cadastrar" />
       </children>
     </AnchorPane>
   </children>

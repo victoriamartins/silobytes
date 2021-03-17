@@ -68,24 +68,26 @@ public class NovoAluguelController {
         double espaco = sliderEspaco.getValue();
         LocalDate dataInicio = dataAluguel.getValue();
         
-        if (espaco > silo.getDisponivel()) {
-            lblMsg.setText("O silo não tem capacidade para " + espaco 
-                    + " toneladas.");
-        } else {
-            double novoDisponivel = silo.getDisponivel() - espaco;
-            Silo alterado = new Silo(silo.getEndereco(), silo.getCapacidade(), 
-                    false, novoDisponivel);
-            
-            if (novoDisponivel == 0) {
-                alterado.setAlugado(true);
-            }           
-            
-            Aluguel novo = new Aluguel(produtor, silo, espaco, dataInicio);
-            ArquivoAluguel.inserir(novo);
-            ArquivoSilo.alterar(alterado);
-            lblMsg.setVisible(true);
-            lblMsg.setText("Aluguel cadastrado!");
-            this.limpar();
+        if (dataInicio != null && produtor != null && silo != null) {
+            if (espaco > silo.getDisponivel()) {
+                lblMsg.setText("O silo não tem capacidade para " + espaco 
+                        + " toneladas.");
+            } else {
+                double novoDisponivel = silo.getDisponivel() - espaco;
+                Silo alterado = new Silo(silo.getEndereco(), silo.getCapacidade(), 
+                        false, novoDisponivel);
+
+                if (novoDisponivel == 0) {
+                    alterado.setAlugado(true);
+                }           
+
+                Aluguel novo = new Aluguel(produtor, alterado, espaco, dataInicio);
+                ArquivoAluguel.inserir(novo);
+                ArquivoSilo.alterar(alterado);
+                lblMsg.setVisible(true);
+                lblMsg.setText("Aluguel cadastrado!");
+                this.limpar();
+            }
         }
     }
     
