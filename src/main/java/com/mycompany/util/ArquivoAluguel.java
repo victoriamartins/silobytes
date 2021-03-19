@@ -63,7 +63,6 @@ public class ArquivoAluguel {
         try {
             for (Aluguel a: lista) {
                 if (a.getProdutor().getCpf().equals(alteracoes.getProdutor().getCpf())) {
-                    System.out.println("achou");
                     a.setProdutor(alteracoes.getProdutor());
                     FileOutputStream fos = new FileOutputStream(Info.ARQUIVO_ALUGUEL);
                     ObjectOutputStream oos = new ObjectOutputStream(fos);

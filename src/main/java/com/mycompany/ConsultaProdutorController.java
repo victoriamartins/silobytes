@@ -48,20 +48,18 @@ public class ConsultaProdutorController {
         selectionModel = tbProdutor.getSelectionModel(); 
         selectionModel.setSelectionMode(SelectionMode.SINGLE);  
     }
-    
     @FXML
     private void copiarDados(){
         try {
             selecao = tbProdutor.getSelectionModel().getSelectedItem();
-            if (selecao != null) {
-                campoNome.setText(selecao.getNome());
-                campoCpf.setText(selecao.getCpf());
-                campoNasc.setValue(selecao.getNascimento());
-                campoTel.setText(selecao.getTelefone());
-                this.visualizacao(true);
-            }
+            campoNome.setText(selecao.getNome());
+            campoCpf.setText(selecao.getCpf());
+            campoNasc.setValue(selecao.getNascimento());
+            campoTel.setText(selecao.getTelefone());
+            this.visualizacao(true);
+            lblMsg.setText("");
         } catch (Exception e) {
-            System.out.println(e);
+            lblMsg.setText("Selecione um registro!");
         }
         
     }
@@ -79,12 +77,13 @@ public class ConsultaProdutorController {
                 for (Aluguel a: listaAluguel) {
                     if (a.getProdutor().getCpf().equals(selecao.getCpf())){
                         a.setProdutor(novo);
-                        System.out.println(a.getProdutor().getNome());
                         ArquivoAluguel.alterarProdutor(a);
                         break;
                     }
                 }
-                this.cancelar();
+                lblMsg.setText("Dados alterados!");
+                atualizaTabela();
+                this.cancelar();    
             }
         } catch (Exception e) {
             System.out.println(e);
@@ -97,6 +96,13 @@ public class ConsultaProdutorController {
         campoNasc.setValue(null);
         campoTel.setText("");
         visualizacao(false);
+    }
+    @FXML 
+    private void atualizaTabela(){
+        listaProdutores.removeAll(listaProdutores);
+        produtores = ArquivoProdutor.listar();
+        listaProdutores = FXCollections.observableList(produtores);
+        tbProdutor.setItems(listaProdutores);  
     }
     @FXML
     private void visualizacao(boolean estado){
@@ -111,7 +117,6 @@ public class ConsultaProdutorController {
         btnSalvar.setVisible(estado);
         btnCancelar.setVisible(estado);
     }
-    
     @FXML 
     private void voltarMenu() throws IOException{
         App.setRoot("menu");
@@ -149,5 +154,6 @@ public class ConsultaProdutorController {
     private Label lbl3;
     @FXML
     private Label lbl4;
-    
+    @FXML
+    private Label lblMsg;
 }
