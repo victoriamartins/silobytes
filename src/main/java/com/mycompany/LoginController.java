@@ -43,6 +43,7 @@ public class LoginController {
         for (Usuario u: lista) {
             if (u.getLogin().equals(usuario)
                     && u.getSenha().equals(senha)) {
+                MenuController.logado = u;
                 this.acessaMenu();
             }
         }

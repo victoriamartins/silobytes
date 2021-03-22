@@ -3,6 +3,7 @@ com\mycompany\Produtor.class
 com\mycompany\ConsultaSiloController.class
 com\mycompany\util\ArquivoAluguel.class
 com\mycompany\Usuario.class
+com\mycompany\AlteraUsuarioController.class
 com\mycompany\util\ArquivoProdutor.class
 module-info.class
 com\mycompany\ConsultaAluguelController.class

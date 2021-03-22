@@ -41,8 +41,8 @@ public class Arquivo {
         ArrayList<Usuario> lista = listar();
         try {
             for(Usuario u: lista){ 
-                if(usuarioAlt.getLogin().equals(u.getLogin())){  
-                    u.setNome(usuarioAlt.getNome());
+                if(usuarioAlt.getNome().equals(u.getNome())){  
+                    u.setLogin(usuarioAlt.getLogin());
                     u.setSenha(usuarioAlt.getSenha());
                     FileOutputStream fos = new FileOutputStream(Info.ARQUIVO_USUARIO);
                     ObjectOutputStream oos = new ObjectOutputStream(fos);

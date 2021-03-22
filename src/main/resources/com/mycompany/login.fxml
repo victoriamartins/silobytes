@@ -51,7 +51,7 @@
             </Label>
             <Label layoutX="198.0" layoutY="225.0" text="Usuário" />
             <Label layoutX="198.0" layoutY="264.0" text="Senha" />
-            <Label fx:id="lblErro" alignment="CENTER" contentDisplay="CENTER" layoutX="204.0" layoutY="359.0" prefHeight="17.0" prefWidth="239.0" textFill="#ff5050" />
+            <Label fx:id="lblErro" alignment="CENTER" contentDisplay="CENTER" layoutX="215.0" layoutY="349.0" prefHeight="17.0" prefWidth="212.0" textFill="#ff5050" />
             <TextField fx:id="campoUsuario" layoutX="263.0" layoutY="221.0" />
             <PasswordField fx:id="campoSenha" layoutX="263.0" layoutY="260.0" />
             <Button fx:id="btnEntrar" layoutX="287.0" layoutY="307.0" mnemonicParsing="false" onAction="#entrar" prefHeight="25.0" prefWidth="67.0" text="Entrar" />

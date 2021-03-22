@@ -47,7 +47,6 @@
         <Menu mnemonicParsing="false" text="Arquivo">
           <items>
             <MenuItem mnemonicParsing="false" onAction="#voltarMenu" text="Menu" />
-                  <MenuItem mnemonicParsing="false" onAction="#atualizaTabela" text="ATT" />
           </items>
         </Menu>
       </menus>
