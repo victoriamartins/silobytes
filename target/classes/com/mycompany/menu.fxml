@@ -32,6 +32,7 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -45,13 +46,6 @@
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
-        <Menu mnemonicParsing="false" text="Opções">
-          <items>
-            <MenuItem mnemonicParsing="false" onAction="#sair" text="Sair" />
-                  <MenuItem mnemonicParsing="false" onAction="#trocarUsuario" text="Trocar de Usuário" />
-                  <MenuItem mnemonicParsing="false" onAction="#alterarMeusDados" text="Alterar meus dados" />
-          </items>
-        </Menu>
         <Menu mnemonicParsing="false" text="Usuário">
           <items>
             <MenuItem mnemonicParsing="false" onAction="#cadatrarUsuario" text="Novo" />
@@ -82,7 +76,7 @@
     </MenuBar>
     <AnchorPane prefHeight="540.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
          <children>
-            <Pane layoutX="21.0" layoutY="17.0" prefHeight="98.0" prefWidth="384.0" style="-fx-border-color: grey;">
+            <Pane layoutX="32.0" layoutY="25.0" prefHeight="98.0" prefWidth="384.0" style="-fx-border-color: grey;">
                <children>
                   <Label fx:id="nomeLogado" layoutX="104.0" layoutY="21.0" prefHeight="17.0" prefWidth="252.0" text="Label">
                      <font>
@@ -106,15 +100,18 @@
                   </Label>
                </children>
             </Pane>
-            <Pane layoutX="427.0" layoutY="17.0" prefHeight="98.0" prefWidth="191.0" style="-fx-border-color: grey;">
+            <Pane layoutX="441.0" layoutY="25.0" prefHeight="98.0" prefWidth="168.0" style="-fx-border-color: grey;">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="39.0" layoutY="23.0" prefHeight="52.0" prefWidth="114.0" text="SiloBytes" textFill="#0d00ff">
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="23.0" prefHeight="52.0" prefWidth="114.0" text="SiloBytes" textFill="#0d00ff">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
+            <Button layoutX="32.0" layoutY="138.0" mnemonicParsing="false" onAction="#sair" prefHeight="25.0" prefWidth="125.0" text="Sair" />
+            <Button layoutX="163.0" layoutY="138.0" mnemonicParsing="false" onAction="#trocarUsuario" prefHeight="25.0" prefWidth="124.0" text="Trocar de usuário" />
+            <Button layoutX="293.0" layoutY="138.0" mnemonicParsing="false" onAction="#alterarMeusDados" prefHeight="25.0" prefWidth="123.0" text="Alterar meus dados" />
          </children></AnchorPane>
   </children>
 </VBox>

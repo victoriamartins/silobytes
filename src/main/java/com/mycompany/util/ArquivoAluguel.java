@@ -1,6 +1,7 @@
 package com.mycompany.util;
 
 import com.mycompany.Aluguel;
+import com.mycompany.Silo;
 import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -64,6 +65,29 @@ public class ArquivoAluguel {
             for (Aluguel a: lista) {
                 if (a.getProdutor().getCpf().equals(alteracoes.getProdutor().getCpf())) {
                     a.setProdutor(alteracoes.getProdutor());
+                    FileOutputStream fos = new FileOutputStream(Info.ARQUIVO_ALUGUEL);
+                    ObjectOutputStream oos = new ObjectOutputStream(fos);
+                    oos.writeObject(lista);
+                    oos.close();
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Erro " + e);
+        }
+    }
+    public static void alterarSilo(Silo antigo, Silo novo) {
+        ArrayList<Aluguel> lista = listar();
+        try {
+            for (Aluguel a: lista) {
+                if (a.getSilo().getEndereco().equals(antigo.getEndereco())
+                        && a.getSilo().getCapacidade() == antigo.getCapacidade()
+                        ) {
+                    
+                    a.getSilo().setEndereco(novo.getEndereco());
+                    a.getSilo().setAlugado(novo.getAlugado());
+                    a.getSilo().setCapacidade(novo.getCapacidade());
+                    a.getSilo().setDisponivel(novo.getDisponivel());
+                    
                     FileOutputStream fos = new FileOutputStream(Info.ARQUIVO_ALUGUEL);
                     ObjectOutputStream oos = new ObjectOutputStream(fos);
                     oos.writeObject(lista);

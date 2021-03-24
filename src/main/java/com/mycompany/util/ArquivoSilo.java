@@ -38,7 +38,7 @@ public class ArquivoSilo {
         }
         return lista;
     }    
-        
+    // dados alterados ao manipular um aluguel    
     public static void alterar(Silo siloAlterar) {
         ArrayList<Silo> lista = listar();
         try {
@@ -55,6 +55,33 @@ public class ArquivoSilo {
                     oos.close();
                 }
             }
+        } catch (Exception e) {
+            System.out.println("Erro ao alterar lista!");
+        }
+    }
+    // usuario altera dados cadastrais do silo
+    public static void alterarCadastro(Silo antigo, Silo novo) {
+        ArrayList<Silo> lista = listar();
+        try {
+            for(Silo s: lista){ 
+                if(s.getEndereco().equals(antigo.getEndereco())
+                        && s.getCapacidade() == antigo.getCapacidade()
+                        && s.getDisponivel() == antigo.getDisponivel()){  
+                    
+                    double espacoAlugado = s.getCapacidade() - s.getDisponivel();
+                    
+                    s.setAlugado(novo.getAlugado());
+                    s.setEndereco(novo.getEndereco());
+                    s.setCapacidade(novo.getCapacidade());
+                    s.setDisponivel(novo.getCapacidade() - espacoAlugado);
+                    
+                    FileOutputStream fos = new FileOutputStream(Info.ARQUIVO_SILO);
+                    ObjectOutputStream oos = new ObjectOutputStream(fos);
+                    oos.writeObject(lista);
+                    oos.close();
+                }
+            }
+            ArquivoAluguel.alterarSilo(antigo, novo);
         } catch (Exception e) {
             System.out.println("Erro ao alterar lista!");
         }
