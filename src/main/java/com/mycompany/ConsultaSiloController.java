@@ -83,9 +83,13 @@ public class ConsultaSiloController {
     private void copiarDados () {
         try {
             selecao = tbSilo.getSelectionModel().getSelectedItem();
-            this.visibilidade(true);
-            campoEndereco.setText(selecao.getEndereco());
-            campoCapac.setValue(selecao.getCapacidade());
+            if (selecao != null) {
+                this.visibilidade(true);
+                campoEndereco.setText(selecao.getEndereco());
+                campoCapac.setValue(selecao.getCapacidade());
+            } else {
+                lblMsg.setText("Selecione um registro.");
+            }
         } catch (Exception e) {
             System.out.println(e);
         }

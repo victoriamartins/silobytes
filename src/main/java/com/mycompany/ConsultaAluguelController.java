@@ -17,6 +17,7 @@ import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ConsultaAluguelController {
@@ -28,20 +29,20 @@ public class ConsultaAluguelController {
         alugueis = ArquivoAluguel.listar();    
         
         colNome = new TableColumn("Produtor");    
-        colEndereco = new TableColumn("Endereco");
+        colEndereco = new TableColumn("Endereco do silo");
         colDataInicial = new TableColumn("Inicio do contrato");
         colDataFinal = new TableColumn("Fim do contrato");
         colEspacoAlugado = new TableColumn("Espaço alugado");
         colTotal = new TableColumn("Total (R$)");
-        colPago = new TableColumn("Pagamento realizado");
-        
+        colPago = new TableColumn("Situação do pagamento");
+
+        colPago.setCellValueFactory(new PropertyValueFactory<>("pago"));
         colNome.setCellValueFactory(new PropertyValueFactory<>("produtor")); 
         colEndereco.setCellValueFactory(new PropertyValueFactory<>("silo")); 
         colDataInicial.setCellValueFactory(new PropertyValueFactory<>("inicioAluguel")); 
         colDataFinal.setCellValueFactory(new PropertyValueFactory<>("fimAluguel"));
         colEspacoAlugado.setCellValueFactory(new PropertyValueFactory<>("espacoAlugado"));
         colTotal.setCellValueFactory(new PropertyValueFactory<>("total"));
-        colPago.setCellValueFactory(new PropertyValueFactory<>("pago"));
                   
         listaAlugueis = FXCollections.observableArrayList(alugueis);        
         tbAluguel.getColumns().addAll(colNome, colEndereco, colEspacoAlugado, 

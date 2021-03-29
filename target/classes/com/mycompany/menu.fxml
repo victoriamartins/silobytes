@@ -37,6 +37,7 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
@@ -55,13 +56,13 @@
             <Menu mnemonicParsing="false" text="Produtor">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#cadastrarProdutor" text="Novo" />
-                  <MenuItem mnemonicParsing="false" onAction="#consultarProdutor" text="Consultar" />
+                  <MenuItem mnemonicParsing="false" onAction="#consultarProdutor" text="Gerenciar" />
               </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Silo">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#cadastrarSilo" text="Novo" />
-                  <MenuItem mnemonicParsing="false" onAction="#consultarSilo" text="Consultar" />
+                  <MenuItem mnemonicParsing="false" onAction="#consultarSilo" text="Gerenciar" />
               </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Aluguel">
@@ -112,6 +113,13 @@
             <Button layoutX="32.0" layoutY="138.0" mnemonicParsing="false" onAction="#sair" prefHeight="25.0" prefWidth="125.0" text="Sair" />
             <Button layoutX="163.0" layoutY="138.0" mnemonicParsing="false" onAction="#trocarUsuario" prefHeight="25.0" prefWidth="124.0" text="Trocar de usuário" />
             <Button layoutX="293.0" layoutY="138.0" mnemonicParsing="false" onAction="#alterarMeusDados" prefHeight="25.0" prefWidth="123.0" text="Alterar meus dados" />
+            <TableView fx:id="tbPendentes" layoutX="32.0" layoutY="231.0" prefHeight="255.0" prefWidth="577.0" />
+            <Label layoutX="32.0" layoutY="195.0" prefHeight="27.0" prefWidth="199.0" text="Aluguéis pendentes" textFill="#1c00ff">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnAtt" layoutX="441.0" layoutY="196.0" mnemonicParsing="false" onAction="#atualizaTabela" prefHeight="25.0" prefWidth="168.0" text="Atualizar" />
          </children></AnchorPane>
   </children>
 </VBox>

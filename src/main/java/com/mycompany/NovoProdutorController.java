@@ -37,13 +37,17 @@ public class NovoProdutorController {
         String cpf = campoCPF.getText();
         LocalDate nascimento = campoNascimento.getValue();
         String telefone = campoTel.getText();
-        Produtor p = new Produtor(nome, cpf, nascimento, telefone);
-        try {
-            ArquivoProdutor.inserir(p);
-            this.limparCampos();
-            lblMsg.setText(nome + " cadastrado com sucesso!");
-        } catch (Exception e) {
-            lblMsg.setText("Erro ao cadastrar!");
+        if (nome != "" && cpf != "" && nascimento != null && telefone != ""){
+            Produtor p = new Produtor(nome, cpf, nascimento, telefone);
+            try {
+                ArquivoProdutor.inserir(p);
+                this.limparCampos();
+                lblMsg.setText(nome + " cadastrado com sucesso!");
+            } catch (Exception e) {
+                lblMsg.setText("Erro ao cadastrar!");
+            }
+        } else {
+            lblMsg.setText("Campo vazio!");
         }
     }
     
